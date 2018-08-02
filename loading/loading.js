@@ -118,6 +118,19 @@ $(function() {
 
 	setTimeout(loadingCricle, 500);
 	setTimeout(textAnimation, 1500);
+
+	$('.equalizer').addClass('equalizer__active');
+	if ($('.equalizer').hasClass('equalizer__active')) {
+		$('body').append('<div class="background__sound"><embed src="sound/bensound-straight.mp3" autostart="true" loop="true" hidden="true"></div>');
+	}
+	$('.equalizer').click(function(event) {
+		$(this).toggleClass('equalizer__active');
+		if ($('.equalizer').hasClass('equalizer__active')) {
+			$('body').append('<div class="background__sound"><embed src="sound/bensound-straight.mp3" autostart="true" loop="true" hidden="true"></div>');
+		} else {
+			$('.background__sound').remove();
+		}
+	});
 	
 });
 
